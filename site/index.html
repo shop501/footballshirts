@@ -520,7 +520,7 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
 <header>
   <div class="wrap">
     <button class="logo" id="goHome" aria-label="Football Shirt Stand home"><svg class="fss" viewBox="0 0 230 112" aria-hidden="true"><text x="121" y="100" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="122" letter-spacing="-4" fill="none" stroke="#0c0c0c" stroke-width="3">FSS</text><text x="113" y="93" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="122" letter-spacing="-4" fill="#e2150c">FSS</text></svg><span class="lname">Football Shirt Stand</span></button>
-    <div class="navr"><button class="shopall" id="goShopAll">Shop</button><button class="sellbtn" id="goSell">Sell To Us</button><button class="sellbtn" id="navSold">Sold Archive</button><button class="sellbtn" id="navRev">Reviews</button>
+    <div class="navr"><button class="shopall" id="goShopAll">Shop</button><button class="sellbtn" id="goSell">Sell To Us</button><button class="sellbtn" id="navReq">Request A Shirt</button><button class="sellbtn" id="navSold">Sold Archive</button><button class="sellbtn" id="navRev">Reviews</button>
     <button class="bagbtn" id="openBag" aria-label="Open your bag">Your Bag <b id="bagCount">0</b></button></div>
   </div>
   <div class="ticker" aria-hidden="true"><div class="run" id="tickRun"></div></div>
@@ -600,6 +600,37 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
   </section>
   </div>
 
+  <div id="reqView" hidden>
+  <section class="wrap shop-head"><button class="back" id="backReq">← Home</button><h2>Request A Shirt</h2></section>
+  <section class="wrap"><p class="note" style="font-size:.95rem;max-width:60ch">Looking for a specific shirt? Tell us what you want and your budget. We reply within 48 hours to say whether we take on the search.</p></section>
+  <form class="wrap sellform" id="reqForm" novalidate>
+    <fieldset><legend>You</legend>
+      <label for="rName">Full Name <span class="req">*</span><input id="rName" autocomplete="name"></label>
+      <label for="rEmail">Email <span class="req">*</span><input id="rEmail" type="email" autocomplete="email"></label>
+      <label class="full" for="rCountry">Country<input id="rCountry" autocomplete="country-name" placeholder="e.g. Portugal"></label>
+    </fieldset>
+    <fieldset><legend>The Shirt</legend>
+      <label for="rClub">Club Or National Team <span class="req">*</span><input id="rClub" placeholder="e.g. FC Porto"></label>
+      <label for="rSeason">Season <span class="req">*</span><input id="rSeason" placeholder="e.g. 2003/04"></label>
+      <label for="rKit">Kit<select id="rKit"><option>Home</option><option>Away</option><option>Third</option><option>Goalkeeper</option><option>Training</option><option>Any</option></select></label>
+      <label for="rSize">Size <span class="req">*</span><select id="rSize"><option value="">Choose</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>Kids 5–6 yrs</option><option>Kids 7–8 yrs</option><option>Kids 9–10 yrs</option><option>Kids 11–12 yrs</option><option>Kids 13–14 yrs</option><option>Any</option></select></label>
+      <label for="rVersion">Version<select id="rVersion"><option>Fan Version</option><option>Player Version</option><option>Either</option></select></label>
+      <label for="rPrint">Name / Number Wanted<input id="rPrint" placeholder="e.g. Deco 10, or none"></label>
+      <label for="rGrade">Lowest Condition Accepted<select id="rGrade"><option>8/10</option><option>9/10</option><option>10/10</option><option>BNWT only</option></select></label>
+      <label for="rBudget">Budget, € <span class="req">*</span><input id="rBudget" type="number" min="1" inputmode="numeric" placeholder="e.g. 80"></label>
+      <label class="full" for="rNotes">Anything else<textarea id="rNotes" placeholder="Patches, sleeve badges, deadline, anything that matters to you"></textarea></label>
+    </fieldset>
+    <div class="full" style="display:grid;gap:8px">
+      <p class="err" id="reqErr" hidden></p>
+      <p style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave empty<input id="rBot" tabindex="-1" autocomplete="off"></label></p>
+      <button class="add" type="submit" id="reqBtn" style="justify-self:start;padding:12px 28px">Send Request</button>
+      <p class="note">Sending a request is free and doesn't commit you to buy.</p>
+    </div>
+  </form>
+  <div class="wrap sellok" id="reqOk" hidden></div>
+  <form name="request-a-shirt" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true"><input name="ref"><input name="name"><input name="email"><input name="country"><input name="club"><input name="season"><input name="kit"><input name="size"><input name="version"><input name="print"><input name="min_condition"><input name="budget_eur"><textarea name="notes"></textarea><input name="bot-field"></form>
+  </div>
+
   <div id="sellView" hidden>
   <section class="wrap shop-head"><button class="back" id="backSell">← Home</button><h2>Sell Your Shirts</h2></section>
   <section class="wrap"><p class="note" style="font-size:.95rem;max-width:60ch">Send up to 5 items in one form. We reply within 24–48 hours with an offer or a no.</p></section>
@@ -630,7 +661,7 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
   <div class="wrap foot">
     <div><div class="logo flogo" style="cursor:default"><svg class="fss fss-big" viewBox="0 0 230 112" aria-hidden="true"><text x="121" y="100" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="122" letter-spacing="-4" fill="none" stroke="#ffffff" stroke-width="3">FSS</text><text x="113" y="93" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="122" letter-spacing="-4" fill="#e2150c">FSS</text></svg></div></div>
     <div><h4>Shop</h4><ul><li><button class="fl" data-go="adult">Adult Shirts</button></li><li><button class="fl" data-go="kids">Kids Shirts</button></li><li><button class="fl" data-go="other">Other Clothing</button></li><li><button class="fl" data-go="all">Shop All</button></li></ul></div>
-    <div><h4>The Stand</h4><ul><li><button class="fl" data-go="sell">Sell To Us</button></li><li><button class="fl" data-go="sold">Sold Archive</button></li><li><button class="fl" data-go="rev">Reviews</button></li></ul></div>
+    <div><h4>The Stand</h4><ul><li><button class="fl" data-go="sell">Sell To Us</button></li><li><button class="fl" data-go="req">Request A Shirt</button></li><li><button class="fl" data-go="sold">Sold Archive</button></li><li><button class="fl" data-go="rev">Reviews</button></li></ul></div>
     <div><h4>Help</h4><ul><li><button class="fl" data-info="size">Size Guide</button></li><li><button class="fl" data-info="faq">FAQ</button></li><li><button class="fl" data-info="contact">Contact</button></li><li><a class="fl" href="mailto:shop@footballshirts.pt" style="color:inherit;white-space:nowrap">Email: shop@footballshirts.pt</a></li><li><a class="fl" href="https://www.instagram.com/footballshirtstand/" target="_blank" rel="noopener" style="color:inherit;white-space:nowrap">Instagram: @footballshirtstand</a></li><li>Returns: 14 days</li><li>Payment: PayPal only</li></ul></div>
     <div><h4>New Shirts First</h4><p>One email when new shirts go on the stand. No spam.</p>
       <form class="news" id="news" novalidate><label for="nEmail" class="sr" style="position:absolute;left:-9999px">Email</label><input id="nEmail" type="email" placeholder="Your Email" autocomplete="email"><button type="submit">Join</button></form>
@@ -744,7 +775,7 @@ const SHIRTS=[
  {id:24,no:2,drop:1,real:true,club:"Manchester United",season:"2022/23",kind:"Away",league:"England",era:"2020s",size:"XS",ptp:null,grade:"10/10",price:40,c1:"#ffffff",c2:"#da291c",pat:"plain",
   cut:"img/united-front-cut.webp",code:"H13880",
   photos:[["img/united-front.webp","Front"],["img/united-chest.jpg","Badge and TeamViewer sponsor"],["img/united-sleeve.jpg","DXC Technology sleeve sponsor"],["img/united-neck.jpg","Neck label, size XS"],["img/united-tag.jpg","Inside tag"]]},
- {id:25,no:3,drop:1,real:true,club:"Barcelona",season:"2015/16",kind:"Away",league:"Spain",era:"2010s",size:"Kids XL (13–15 yrs)",kids:true,ptp:null,grade:"10/10",price:30,c1:"#f2b51c",c2:"#c8102e",pat:"plain",
+ {id:25,no:3,drop:1,real:true,club:"Barcelona",season:"2015/16",kind:"Away",league:"Spain",era:"2010s",size:"Kids XL (13–15 yrs)",kids:true,ptp:null,grade:"9/10",note:"Light wear to the size label",price:30,c1:"#f2b51c",c2:"#c8102e",pat:"plain",
   cut:"img/barca-front-cut.webp",cutBack:"img/barca-back-cut.webp",code:"659028-740",
   photos:[["img/barca-front.webp","Front"],["img/barca-back.webp","Back, Messi 10"],["img/barca-chest.jpg","Badge and Club World Champions patch"],["img/barca-lfp.jpg","LFP sleeve patch"],["img/barca-beko.jpg","Beko sleeve sponsor"],["img/barca-neck.jpg","Neck label"],["img/barca-code.jpg","Authentic tag"],["img/barca-tag.jpg","Inside tag"]]}
 ];
@@ -758,7 +789,7 @@ const CUR_DROP=Math.max(1,...SHIRTS.map(x=>x.drop||1));
 const pad3=n=>String(n).padStart(3,"0");
 const $=s=>document.querySelector(s);
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
-function showView(id){["homeView","storeView","shopView","sellView","soldView"].forEach(v=>{const el=$("#"+v);if(v===id){el.hidden=false;el.classList.remove("enter");void el.offsetWidth;el.classList.add("enter")}else el.hidden=true});
+function showView(id){["homeView","storeView","shopView","sellView","soldView","reqView"].forEach(v=>{const el=$("#"+v);if(v===id){el.hidden=false;el.classList.remove("enter");void el.offsetWidth;el.classList.add("enter")}else el.hidden=true});
   window.scrollTo({top:0,behavior:RM?"auto":"smooth"})}
 const eur=n=>n==null?"Price TBC":"€"+n.toFixed(2).replace(".",",");
 const buyable=s=>!s.sold&&s.price!=null;
@@ -913,6 +944,33 @@ $("#sellForm").addEventListener("submit",async e=>{
    (ok.length?`<p class="note">Your reference: <strong>${ref}</strong></p>`:"")+(live?"":`<p class="note">Preview only: nothing was sent from here.</p>`)+`<button class="add" id="sellAgain" style="justify-self:start;padding:10px 22px">Sell More Items</button>`;
   $("#sellForm").hidden=true;$("#sellOk").hidden=false;$("#sellOk").classList.remove("enter");void $("#sellOk").offsetWidth;$("#sellOk").classList.add("enter");window.scrollTo({top:0,behavior:RM?"auto":"smooth"});
   $("#sellAgain").onclick=()=>{$("#sellForm").reset();resetItems();goSell()};
+});
+
+function goReq(){$("#reqForm").hidden=false;$("#reqOk").hidden=true;showView("reqView");try{history.replaceState(null,"","#request")}catch(e){}}
+$("#navReq").onclick=goReq;$("#backReq").onclick=()=>goHome();
+$("#reqForm").addEventListener("submit",async e=>{
+  e.preventDefault();const v=id=>$(id).value.trim(),err=$("#reqErr");
+  let msg="";
+  if(!v("#rName")||!/^\S+@\S+\.\S+$/.test(v("#rEmail")))msg="Add your name and a valid email.";
+  else if(!v("#rClub")||!v("#rSeason")||!v("#rSize"))msg="Add the club, season and size you're looking for.";
+  else if(!(+v("#rBudget")>0))msg="Add your budget in euros.";
+  if(msg){err.textContent=msg;err.hidden=false;return}
+  err.hidden=true;if($("#rBot").value)return;
+  const live=/footballshirts\.pt$|netlify\.app$/.test(location.hostname);
+  const ref="FSS-R-"+new Date().toISOString().slice(2,10).replace(/-/g,"")+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
+  const btn=$("#reqBtn"),label=btn.textContent;
+  if(live){
+    btn.disabled=true;btn.textContent="Sending…";
+    try{
+      const data={"form-name":"request-a-shirt","bot-field":"",ref,name:v("#rName"),email:v("#rEmail"),country:v("#rCountry"),club:v("#rClub"),season:v("#rSeason"),kit:$("#rKit").value,size:v("#rSize"),version:$("#rVersion").value,print:v("#rPrint"),min_condition:$("#rGrade").value,budget_eur:v("#rBudget"),notes:v("#rNotes")};
+      const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(data).toString()});
+      if(!r.ok)throw new Error(r.status);
+    }catch(ex){btn.disabled=false;btn.textContent=label;err.textContent="Something went wrong while sending. Please try again, or email us at shop@footballshirts.pt.";err.hidden=false;return}
+    btn.disabled=false;btn.textContent=label;
+  }
+  $("#reqOk").innerHTML=`<h2 style="font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:2.4rem;margin:0;line-height:1">Thanks, ${v("#rName").split(" ")[0]}</h2><p>We've got your request for a <strong>${v("#rClub")} ${v("#rSeason")}</strong> shirt, size ${v("#rSize")}, budget €${v("#rBudget")}. We'll reply to <strong>${v("#rEmail")}</strong> within 48 hours.</p><p class="note">Your reference: <strong>${ref}</strong></p>`+(live?"":`<p class="note">Preview only: nothing was sent from here.</p>`)+`<button class="add" id="reqAgain" style="justify-self:start;padding:10px 22px">Request Another Shirt</button>`;
+  $("#reqForm").hidden=true;$("#reqOk").hidden=false;window.scrollTo({top:0,behavior:RM?"auto":"smooth"});
+  $("#reqAgain").onclick=()=>{$("#reqForm").reset();goReq()};
 });
 function goHome(){showView("homeView");try{history.replaceState(null,"","#home")}catch(e){}}
 function goStore(){showView("storeView");try{history.replaceState(null,"","#store")}catch(e){}}
@@ -1072,7 +1130,7 @@ $("#ctaKids").onclick=()=>openShop("Kids Shirts",{who:"Kids",type:"Shirts"});
 $("#newAll").onclick=()=>openShop("Shop All",{});$("#ctaAll").onclick=()=>openShop("Shop All",{});
 document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{const g=b.dataset.go;
   if(g==="adult")openShop("Adult Shirts",{who:"Adults",type:"Shirts"});else if(g==="kids")openShop("Kids Shirts",{who:"Kids",type:"Shirts"});
-  else if(g==="other")openShop("Other Clothing",{type:"Other Clothing"});else if(g==="sell")goSell();else if(g==="sold")goSold();else if(g==="rev")$("#navRev").click();else openShop("Shop All",{})});
+  else if(g==="other")openShop("Other Clothing",{type:"Other Clothing"});else if(g==="sell")goSell();else if(g==="sold")goSold();else if(g==="rev")$("#navRev").click();else if(g==="req")goReq();else openShop("Shop All",{})});
 $("#news").addEventListener("submit",e=>{e.preventDefault();const v=$("#nEmail").value.trim(),m=$("#nMsg");m.hidden=false;
   m.textContent=/^\S+@\S+\.\S+$/.test(v)?"Thanks. This is a demo, so no email was saved yet.":"Enter a valid email address."});
 (function(){const picks=SHIRTS.filter(x=>x.cut&&!x.sold).slice(0,3);
@@ -1082,6 +1140,7 @@ if(location.hash==="#shop")openShop("All Shirts");
 if(location.hash==="#sell")goSell();
 if(location.hash==="#store")goStore();
 if(location.hash==="#sold")goSold();
+if(location.hash==="#request")goReq();
 renderSold();
 </script>
 
