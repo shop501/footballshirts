@@ -12,6 +12,7 @@ seo=f'''<meta name="description" content="{desc}">
 <meta property="og:url" content="https://footballshirts.pt/">
 <meta property="og:image" content="https://footballshirts.pt/img/benfica-front.webp">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token": "812d2ee27b3f4733a286ae9b1b805e26"}}'></script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"OnlineStore","name":"Football Shirt Stand","alternateName":"FSS","url":"https://footballshirts.pt/","email":"shop@footballshirts.pt","sameAs":["https://www.instagram.com/footballshirtstand/"],"description":"{desc}"}}</script>
 '''
 head='<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'+seo
