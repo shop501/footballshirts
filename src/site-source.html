@@ -282,6 +282,13 @@ textarea{min-height:90px;resize:vertical}
 .pinfo2{padding:36px;display:grid;gap:14px;align-content:start;overflow-y:auto;min-width:0}
 .pinfo2 h2{font-weight:800;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:.92;letter-spacing:-.045em;text-transform:uppercase;margin:0;padding-right:72px}
 .pprice{font-size:1.5rem;font-weight:800}
+.bagbtn,#drawer,#scrim{display:none!important}
+.status{display:block;text-align:center;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:12px 0;border-radius:999px;margin-top:12px}
+.status.avail{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);cursor:default}
+.status.avail::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#1f9d55;margin-right:8px;vertical-align:1px}
+.status.out{background:var(--soft);color:var(--muted)}
+.buy .status{display:inline-block;padding:12px 26px;margin-top:0}
+@media (max-width:760px){.logo{padding-right:0!important}}
 .soonband{position:absolute;left:0;right:0;bottom:16px;z-index:3;background:var(--red);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:9px 0;box-shadow:0 2px 0 var(--ink)}
 .soonnote{margin:10px 0 14px;padding:12px 14px;border-left:4px solid var(--red);background:var(--soft);font-size:.92rem;line-height:1.5}
 .soonnote a{color:inherit;font-weight:700}
@@ -657,7 +664,7 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
 </footer>
 
 <div class="cookiebar" id="cookieBar" hidden role="region" aria-label="Cookie notice">
-  <p><b>Cookies</b> We use essential storage to run the shop, like remembering your bag. Optional analytics only with your OK. <button class="cklink" type="button" data-info="cookies">Cookie Policy</button></p>
+  <p><b>Cookies</b> We only use essential storage, like remembering this choice. Visit statistics are anonymous and cookie-free. <button class="cklink" type="button" data-info="cookies">Cookie Policy</button></p>
   <div class="ckbtns"><button class="ghost" type="button" id="ckEssential">Essential Only</button><button class="add" type="button" id="ckAll">Accept All</button></div>
 </div>
 <div class="pscrim" id="iScrim" hidden></div>
@@ -679,23 +686,24 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
     <h2>FAQ</h2>
     <details open><summary>Are the shirts original?</summary><p>Yes. Every shirt is official, and we check the product code on the inside tag against the season before it goes on sale.</p></details>
     <details><summary>How does grading work?</summary><p>BNWT: brand new with tags. 10/10: no tags, but looks unworn. 9/10: worn a few times, no marks. 8/10: worn, still very good, any small mark is shown in the photos.</p></details>
-    <details><summary>When will my order ship?</summary><p>Your order ships once the PayPal payment is confirmed, with tracking. Delivery time for your country is shown in your bag before you pay.</p></details>
+    <details><summary>How do I buy a shirt?</summary><p>Message us on Instagram (@footballshirtstand) or email shop@footballshirts.pt with the shirt number. We confirm it is available, tell you the delivery cost for your country and send you a PayPal payment request.</p></details>
+    <details><summary>When will my order ship?</summary><p>Your order ships once the PayPal payment is confirmed, with tracking.</p></details>
     <details><summary>Can I return a shirt?</summary><p>Yes, within 14 days of delivery, in the same condition you received it.</p></details>
-    <details><summary>How do I pay?</summary><p>By PayPal only. You can use your PayPal balance or a card through PayPal.</p></details>
+    <details><summary>How do I pay?</summary><p>By PayPal only. We send you a PayPal payment request, and you can pay with your PayPal balance or a card through PayPal.</p></details>
     <details><summary>How do I sell to you?</summary><p>Go to Sell To Us, fill in the form for up to 5 items with photos, and we reply with an offer within 24–48 hours. We pay sellers by PayPal.</p></details>
   </section>
   <section class="ipage legaltext" data-page="terms" hidden>
     <h2>Terms &amp; Conditions</h2>
-    <p class="note">Last updated: 26 October 2026</p>
+    <p class="note">Last updated: 2 November 2026</p>
     <div class="seller"><b>Seller</b><span>Name / company: To be added</span><span>NIF: To be added</span><span>Address: To be added</span><span>Email: shop@footballshirts.pt</span></div>
     <h3>1. About These Terms</h3>
-    <p>These terms apply to every purchase made on Football Shirt Stand and to every shirt you sell to us. By placing an order or sending items through the Sell To Us form, you accept them.</p>
+    <p>These terms apply to every purchase from Football Shirt Stand and to every shirt you sell to us. Orders are placed by Instagram message or by email. By placing an order or sending items through the Sell To Us form, you accept them.</p>
     <h3>2. The Shirts</h3>
     <p>We sell authentic football shirts and clothing, most of them pre-owned. Each listing shows the condition grade, size, any marks and real photos of that exact item. The photos and description are part of the product description. Colours may vary slightly between screens.</p>
     <h3>3. Prices And Payment</h3>
-    <p>Prices are shown in euros. Delivery costs are shown in your bag before you pay. Payment is by PayPal only. Your order is confirmed once PayPal confirms the payment. Each item is unique, so it is reserved for the first confirmed payment.</p>
+    <p>Prices are shown in euros. We confirm the delivery cost for your country before you pay. Payment is by PayPal only, through a payment request we send you. Your order is confirmed once PayPal confirms the payment. Each item is unique, so it is reserved for the first confirmed payment.</p>
     <h3>4. Delivery</h3>
-    <p>We ship worldwide with tracking. Estimated delivery times by zone are shown in your bag and are estimates, not guarantees. For deliveries outside the EU, import duties or taxes may be charged on arrival and are paid by the buyer.</p>
+    <p>We ship worldwide with tracking. Estimated delivery times are given when you order and are estimates, not guarantees. For deliveries outside the EU, import duties or taxes may be charged on arrival and are paid by the buyer.</p>
     <h3>5. Right Of Withdrawal (Returns)</h3>
     <p>If you live in the EU, you can cancel your purchase within 14 days of receiving it, without giving a reason. Tell us by email within that period, then send the item back within 14 days in the same condition you received it. Return postage is paid by the buyer. We refund the price of the item and the standard delivery cost within 14 days of receiving the item back, through PayPal.</p>
     <h3>6. Guarantee Of Conformity</h3>
@@ -709,10 +717,8 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
     <h3>What We Use</h3>
     <p>Football Shirt Stand only stores what the site needs to work. We do not use advertising cookies.</p>
     <div class="tbl"><table><thead><tr><th>Name</th><th>Purpose</th><th>Type</th><th>Kept For</th></tr></thead><tbody>
-      <tr><td>Your Bag</td><td>Remembers the shirts in your bag</td><td>Essential</td><td>Until you clear it</td></tr>
-      <tr><td>Cookie Choice</td><td>Remembers your cookie choice</td><td>Essential</td><td>12 months</td></tr>
-      <tr><td>PayPal</td><td>Processes payment at checkout (set by PayPal)</td><td>Essential</td><td>Set by PayPal</td></tr>
-      <tr><td>Visit Statistics</td><td>Cloudflare Web Analytics counts page visits anonymously. It sets no cookies and does not track individual visitors</td><td>Cookie-free</td><td>No cookie stored</td></tr>
+            <tr><td>Cookie Choice</td><td>Remembers your cookie choice</td><td>Essential</td><td>12 months</td></tr>
+            <tr><td>Visit Statistics</td><td>Cloudflare Web Analytics counts page visits anonymously. It sets no cookies and does not track individual visitors</td><td>Cookie-free</td><td>No cookie stored</td></tr>
     </tbody></table></div>
     <h3>Your Choice</h3>
     <p>Essential storage is always on, because the shop cannot work without it. Optional cookies are only used if you choose Accept All. You can change your choice at any time with Cookie Settings at the bottom of the page.</p>
@@ -777,7 +783,7 @@ const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 function showView(id){["homeView","storeView","shopView","sellView","soldView","reqView"].forEach(v=>{const el=$("#"+v);if(v===id){el.hidden=false;el.classList.remove("enter");void el.offsetWidth;el.classList.add("enter")}else el.hidden=true});
   window.scrollTo({top:0,behavior:RM?"auto":"smooth"})}
 const eur=n=>n==null?"Price TBC":"€"+n.toFixed(2).replace(".",",");
-const SALES_OPEN=false; // switch to true once PayPal checkout is live
+const SALES_OPEN=false; // purchases are handled by Instagram DM / email
 const buyable=s=>SALES_OPEN&&!s.sold&&s.price!=null;
 const f={league:"All",era:"All",size:"All",who:"All",type:"All"};
 let bag=[];
@@ -978,9 +984,9 @@ function openProduct(id){const s=SHIRTS.find(x=>x.id===id);if(!s)return;const in
   $("#pThumbs").innerHTML=s.photos?ph.map(([src,cap],i)=>`<button type="button" aria-label="${cap}"><img src="${src}" alt=""></button>`).join(""):"";
   $("#pThumbs").querySelectorAll("button").forEach((b,i)=>b.onclick=()=>show(i));show(0);
   $("#pInfo").innerHTML=`<span class="eyebrow">No. ${pad3(s.no)} · Drop ${pad3(s.drop)} · ${s.league} · ${s.season}</span><h2 id="pTitle">${s.club} ${s.kind.toLowerCase()} ${s.season}</h2>
-   <div class="pprice">${eur(s.price)}</div>${!SALES_OPEN&&!s.sold?`<p class="soonnote"><b>Coming Soon.</b> Online checkout opens shortly. Want this shirt now? Message us on <a href="https://www.instagram.com/footballshirtstand/" target="_blank" rel="noopener">Instagram</a> or email <a href="mailto:shop@footballshirts.pt">shop@footballshirts.pt</a>.</p>`:""}
+   <div class="pprice">${eur(s.price)}</div>${!s.sold?`<p class="soonnote"><b>How to buy:</b> message us on <a href="https://www.instagram.com/footballshirtstand/" target="_blank" rel="noopener">Instagram</a> or email <a href="mailto:shop@footballshirts.pt">shop@footballshirts.pt</a> with the shirt number (No. ${pad3(s.no)}). We reply with the delivery cost for your country and a PayPal payment request.</p>`:`<p class="soonnote"><b>Sold.</b> This shirt has found a new home. Looking for one like it? Try <b>Request A Shirt</b>.</p>`}
    <dl class="specs"><dt>Size</dt><dd>${s.size}${s.ptp?" · pit-to-pit "+s.ptp+" cm":""} <button class="sglink" type="button" data-sg>Size Guide</button></dd><dt>Condition</dt><dd>${s.grade}${s.note?" · "+s.note:""}</dd><dt>Version</dt><dd>${s.version}</dd>${s.print?`<dt>Printed</dt><dd>${s.print}</dd>`:""}${s.patch?`<dt>Patches</dt><dd>${s.patch}</dd>`:""}</dl>
-   <button class="add" data-id="${s.id}" ${!buyable(s)||inBag?"disabled":""}>${s.sold?"Sold":(!SALES_OPEN||s.price==null)?"Coming Soon":inBag?"In Your Bag":"Add To Bag"}</button>
+   <span class="status ${s.sold?'out':'avail'}">${s.sold?"Sold Out":"Available"}</span>
    `;
   $("#pInfo").querySelector("[data-sg]").onclick=()=>{closeProduct(true);openInfo("size")};
   $("#pInfo").querySelectorAll(".add[data-id]").forEach(b=>b.onclick=()=>{const id=+b.dataset.id;if(!bag.includes(id))bag.push(id);save();b.classList.add("added");b.textContent="Added ✓";
@@ -1006,13 +1012,13 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeProduct();clos
 function plateHTML(s,cls=""){return `<span class="plate ${cls}" style="--c1:${s.c1};--c2:${s.c2}"><span class="pno">#${pad3(s.no)}</span><span class="pph">Photos Coming Soon</span><span class="scarf"></span></span>`}
 function flipHTML(front,back,alt,flipBtn){return back?`<span class="flip"><span class="face fr"><img src="${front}" alt="${alt}, front" loading="lazy"></span><span class="face bk"><img src="${back}" alt="${alt}, back" loading="lazy"></span></span>${flipBtn?`<span class="turn" role="button" tabindex="0" aria-label="Turn to see the back">↻ Turn</span>`:""}`:`<img src="${front}" alt="${alt}" loading="lazy">`}
 function cardHTML(s){const inBag=bag.includes(s.id);return `
-   <article class="card"><button class="rack" data-view="${s.id}" aria-label="View ${s.club} ${s.season} ${s.kind}">${s.cut?`<span class="float">${flipHTML(s.cut,s.cutBack,`${s.club} ${s.season} ${s.kind.toLowerCase()} shirt`,false)}</span>`:plateHTML(s)}${s.photos?`<span class="pcountb">${s.photos.length} photos</span>`:""}${s.cutBack?`<span class="turn" role="button" tabindex="0" data-turn aria-label="Turn to see the back">↻ Turn</span>`:""}<span class="grade"><i>${s.grade}</i></span>${s.cut?`<span class="wm">${pad3(s.no)}</span>`:""}<span class="badges">${s.version!=="Fan Version"?`<span class="badge pv">${s.version}</span>`:""}</span>${s.sold?'<span class="sold">Sold</span>':""}${!SALES_OPEN&&!s.sold?'<span class="soonband">Coming Soon</span>':""}</button>
+   <article class="card"><button class="rack" data-view="${s.id}" aria-label="View ${s.club} ${s.season} ${s.kind}">${s.cut?`<span class="float">${flipHTML(s.cut,s.cutBack,`${s.club} ${s.season} ${s.kind.toLowerCase()} shirt`,false)}</span>`:plateHTML(s)}${s.photos?`<span class="pcountb">${s.photos.length} photos</span>`:""}${s.cutBack?`<span class="turn" role="button" tabindex="0" data-turn aria-label="Turn to see the back">↻ Turn</span>`:""}<span class="grade"><i>${s.grade}</i></span>${s.cut?`<span class="wm">${pad3(s.no)}</span>`:""}<span class="badges">${s.version!=="Fan Version"?`<span class="badge pv">${s.version}</span>`:""}</span>${s.sold?'<span class="sold">Sold</span>':""}</button>
    <div class="meta"><h3><button class="tlink" data-view="${s.id}">${s.club}</button></h3><span class="price">${eur(s.price)}</span></div>
    <div class="season"><span class="lot">No. ${pad3(s.no)}</span> <span class="dropno">Drop ${pad3(s.drop)}</span> ${s.season} · ${s.kind} · ${s.league}</div>
    <div class="extra">${s.version}${s.print?" · Printed: "+s.print:""}${s.patch?" · "+s.patch:""}</div>
    <div class="spec"><span class="sizelbl"><b>${s.kids?s.size.replace(/^Kids /,"").replace(/ \(.*\)$/,""):s.size}</b>${s.kids?`<small>${(s.size.match(/\((.*)\)/)||[])[1]||"Kids"}</small>`:""}</span>${s.ptp?`<span>${itemType(s)==="Shorts"?"Waist (flat)":"Pit-to-pit"} ${s.ptp} cm</span>`:""}</div>
    ${s.note?`<div class="cnote">${s.note}</div>`:""}
-   <button class="add" data-id="${s.id}" ${!buyable(s)||inBag?"disabled":""}>${s.sold?"Sold":(!SALES_OPEN||s.price==null)?"Coming Soon":inBag?"In Your Bag":"Add To Bag"}</button></article>`}
+   <span class="status ${s.sold?'out':'avail'}">${s.sold?"Sold Out":"Available"}</span></article>`}
 function bindAdds(root){root.querySelectorAll("[data-turn]").forEach(t=>{const go=e=>{e.stopPropagation();e.preventDefault();t.closest(".rack").classList.toggle("flipped")};t.onclick=go;t.onkeydown=e=>{if(e.key==="Enter"||e.key===" ")go(e)}});root.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>openProduct(+b.dataset.view));root.querySelectorAll(".add[data-id]").forEach(b=>b.onclick=()=>{const id=+b.dataset.id;if(!bag.includes(id))bag.push(id);save();
   b.classList.add("added");b.textContent="Added ✓";const c=$("#bagCount");c.textContent=bag.length;c.classList.remove("bump");void c.offsetWidth;c.classList.add("bump");
   setTimeout(()=>{render();renderBag();openBag()},RM?0:450)})}
@@ -1041,7 +1047,7 @@ function renderHomeLists(){
    <div class="txt"><span class="eyebrow">No. ${pad3(s.no)} · Drop ${pad3(s.drop)} · ${s.league} · ${s.season}</span><h2>${s.club} ${s.kind.toLowerCase()} ${s.season}</h2>
    <p>Benfica's red home shirt from the 2023/24 season, printed G. Ramos 88 and carrying the Portuguese champions patch on the centre of the chest. A clean modern Benfica shirt with a name collectors look for.</p>
    <dl class="specs"><dt>Version</dt><dd>${s.version}</dd>${s.print?`<dt>Printed</dt><dd>${s.print}</dd>`:""}${s.patch?`<dt>Patches</dt><dd>${s.patch}</dd>`:""}<dt>Size</dt><dd>${s.size}</dd><dt>Condition</dt><dd>${s.grade}</dd></dl>
-   <div class="buy"><span class="price">${eur(s.price)}</span><button class="add" data-id="${s.id}" ${!buyable(s)||inBag?"disabled":""}>${(!SALES_OPEN||s.price==null)?"Coming Soon":inBag?"In Your Bag":"Add To Bag"}</button>${s.photos?`<button class="ghost" data-view="${s.id}">See all ${s.photos.length} photos</button>`:""}</div></div>`;
+   <div class="buy"><span class="price">${eur(s.price)}</span><span class="status ${s.sold?'out':'avail'}">${s.sold?"Sold Out":"Available"}</span>${s.photos?`<button class="ghost" data-view="${s.id}">See all ${s.photos.length} photos</button>`:""}</div></div>`;
   bindAdds($("#sotw"));
 }
 function render(){
@@ -1110,7 +1116,7 @@ const TEAM=SHIRTS.filter(x=>!x.sold&&x.drop===CUR_DROP).sort((a,b)=>a.no-b.no).s
 $("#rail").innerHTML=`<div class="ts-head"><span class="ts-t">Drop ${pad3(CUR_DROP)}</span><span class="ts-s">Live Now · ${TEAM.length} ${TEAM.length===1?"Item":"Items"}</span></div><ol class="ts">${TEAM.map((s,i)=>`<li><button data-view="${s.id}"><span class="ts-n">${pad3(s.no)}</span><span class="ts-c"><b>${s.club}</b> <i>${s.season} ${s.kind.toLowerCase()}</i>${s.print?`<small>${s.print}</small>`:""}</span><span class="ts-p">${s.price==null?"TBC":eur(s.price)}</span></button></li>`).join("")}</ol><div class="ts-foot"><span>${Math.max(0,SHIRTS.filter(x=>!x.sold).length-TEAM.length)?"+ "+(SHIRTS.filter(x=>!x.sold).length-TEAM.length)+" more in the shop":"More Shirts Dropping Soon"}</span><button class="linkbtn" id="tsAll">Shop All →</button></div>`;
 $("#rail").querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>openProduct(+b.dataset.view));
 $("#tsAll").onclick=()=>openShop("Shop All",{});
-const TICK=["New Drops Every Week","Worldwide Shipping","Pay With PayPal","Authentic Shirts Only","Sell us your shirts · reply in 24–48 h","Adults & Kids"];
+const TICK=["Numbered Drops","Worldwide Shipping","DM To Buy","Authentic Shirts Only","Sell us your shirts · reply in 24–48 h","Adults & Kids"];
 $("#tickRun").innerHTML=[...TICK,...TICK].map(t=>`<span>${t}</span>`).join("");
 $("#ctaAdult").onclick=()=>openShop("Adult Shirts",{who:"Adults",type:"Shirts"});
 $("#ctaKids").onclick=()=>openShop("Kids Shirts",{who:"Kids",type:"Shirts"});
