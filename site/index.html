@@ -391,6 +391,8 @@ html{scroll-behavior:smooth}
 .hiw{list-style:none;padding:0;margin:22px 0 4px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px}
 .hiw li{background:var(--soft);border-radius:4px;padding:18px 18px 20px;display:grid;gap:4px;align-content:start;border-top:4px solid var(--ink)}
 .hiw li:nth-child(2){border-top-color:var(--red)}
+.reqex{max-width:900px;margin:8px 0 6px;padding:14px 16px;border-left:4px solid var(--red);background:var(--soft);font-size:.92rem;line-height:1.5}
+.reqex b{display:block;font-weight:800;text-transform:uppercase;font-size:.75rem;letter-spacing:.12em;color:var(--red);margin-bottom:2px}
 .hiw b{color:var(--red);font-weight:800;font-size:.8rem;letter-spacing:.12em}
 .hiw .h{font-weight:800;text-transform:uppercase;letter-spacing:-.01em;font-size:1.05rem}
 .hiw span:last-child{color:var(--muted);font-size:.92rem;line-height:1.45}
@@ -631,12 +633,13 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
 
   <div id="reqView" hidden>
   <section class="wrap shop-head"><button class="back" id="backReq">← Home</button><h2>Request A Shirt</h2></section>
-  <section class="wrap"><p class="note" style="font-size:.95rem;max-width:60ch">Looking for a specific shirt? Tell us what you want and your budget. We reply within 48 hours to say whether we take on the search. Your budget includes our €18 service fee.</p>
+  <section class="wrap"><p class="note" style="font-size:.95rem;max-width:60ch">Looking for a specific shirt? Tell us what you want and your budget. We reply within 48 hours to say whether we take on the search. Our €18 service fee is only kept if we find your shirt and you choose to buy it.</p>
     <ol class="hiw">
-      <li><b>01</b><span class="h">You Tell Us</span><span>The shirt, the size and your budget.</span></li>
+      <li><b>01</b><span class="h">You Tell Us</span><span>The shirt, the size and your budget. Once we accept, you send your budget plus the €18 fee by PayPal.</span></li>
       <li><b>02</b><span class="h">We Search</span><span>We hunt it down through our network of sellers and collectors.</span></li>
-      <li><b>03</b><span class="h">You Approve</span><span>We send you photos of the shirt and its tags. You only pay once you're happy with it.</span></li>
-    </ol></section>
+      <li><b>03</b><span class="h">You Approve</span><span>We send you photos of the shirt, its tags and its price. We only buy it with your OK, and refund whatever is left of your budget.</span></li>
+    </ol>
+    <div class="reqex"><b>Example</b> Budget €200 + €18 fee = you send €218. We find the shirt for €150 and you approve it: we keep €150 + €18 and refund €50. Not found, or you don't like it: we refund the full €218.</div></section>
   <form class="wrap sellform" id="reqForm" novalidate>
     <fieldset><legend>You</legend>
       <label for="rName">Full Name <span class="req">*</span><input id="rName" autocomplete="name"></label>
@@ -651,7 +654,7 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
       <label for="rVersion">Version<select id="rVersion"><option>Fan Version</option><option>Player Version</option><option>Either</option></select></label>
       <label for="rPrint">Name / Number Wanted<input id="rPrint" placeholder="e.g. Deco 10, or none"></label>
       <label for="rGrade">Lowest Condition Accepted<select id="rGrade"><option>8/10</option><option>9/10</option><option>10/10</option><option>BNWT only</option></select></label>
-      <label for="rBudget">Budget, € <span class="req">*</span><input id="rBudget" type="number" min="1" inputmode="numeric" placeholder="e.g. 80" aria-describedby="rFeeNote"><small class="note" id="rFeeNote" style="display:block;margin-top:6px;font-weight:400">Includes the €18 FSS service fee for finding your shirt.</small></label>
+      <label for="rBudget">Budget for the shirt, € <span class="req">*</span><input id="rBudget" type="number" min="1" inputmode="numeric" placeholder="e.g. 80" aria-describedby="rFeeNote"><small class="note" id="rFeeNote" style="display:block;margin-top:6px;font-weight:400">The most you want to pay for the shirt. Our €18 fee comes on top, and is refunded if we don't find it or you don't want it.</small></label>
       <label class="full" for="rNotes">Anything else<textarea id="rNotes" placeholder="Patches, sleeve badges, deadline, anything that matters to you"></textarea></label>
     </fieldset>
     <div class="full" style="display:grid;gap:8px">
@@ -732,6 +735,7 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
     <details><summary>When will my order ship?</summary><p>Your order ships once the PayPal payment is confirmed, with tracking.</p></details>
     <details><summary>Can I return a shirt?</summary><p>Yes, within 14 days of delivery, in the same condition you received it.</p></details>
     <details><summary>How do I pay?</summary><p>By PayPal only. We send you a PayPal payment request, and you can pay with your PayPal balance or a card through PayPal.</p></details>
+    <details><summary>How does Request A Shirt work?</summary><p>Tell us the shirt, size and your budget. If we take on the search, you send your budget plus our €18 fee by PayPal. When we find the shirt, we send you photos and the price, and only buy it with your OK. You get back whatever is left of your budget. If we don't find it, or you don't want the one we found, we refund everything, fee included.</p></details>
     <details><summary>How do I sell to you?</summary><p>Go to Sell To Us, fill in the form for up to 5 items with photos, and we reply with an offer within 24–48 hours. We pay sellers by PayPal.</p></details>
   </section>
   <section class="ipage legaltext" data-page="terms" hidden>
@@ -752,6 +756,8 @@ footer::before{content:"";display:block;height:8px;background:linear-gradient(18
     <p>Your legal rights under Decree-Law 84/2021 apply. Because most items are second-hand, the guarantee period for those items is 18 months from delivery. If an item is not as described, contact us and we will repair, replace, reduce the price or refund, as the law provides.</p>
     <h3>7. Selling To Us</h3>
     <p>Offers are made within 24–48 hours after we receive your form and are based on the details and photos you send. The final price is confirmed once we receive and check the item. If it does not match the description, we may revise or withdraw the offer and return the item. We pay sellers by PayPal only.</p>
+    <h3>8. Request A Shirt</h3>
+    <p>When we accept a request, you send us your budget for the shirt plus our €18 service fee by PayPal. We only buy a shirt after you approve its photos and price. If you approve, we keep the price of the shirt and the €18 fee and refund the rest of your budget. If we cannot find the shirt, or you do not approve the one we found, we refund the full amount, fee included, by PayPal.</p>
   </section>
   <section class="ipage legaltext" data-page="cookies" hidden>
     <h2>Cookie Policy</h2>
@@ -1003,7 +1009,7 @@ $("#reqForm").addEventListener("submit",async e=>{
     }catch(ex){btn.disabled=false;btn.textContent=label;err.textContent="Something went wrong while sending. Please try again, or email us at shop@footballshirts.pt.";err.hidden=false;return}
     btn.disabled=false;btn.textContent=label;
   }
-  $("#reqOk").innerHTML=`<h2 style="font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:2.4rem;margin:0;line-height:1">Thanks, ${v("#rName").split(" ")[0]}</h2><p>We've got your request for a <strong>${v("#rClub")} ${v("#rSeason")}</strong> shirt, size ${v("#rSize")}, budget €${v("#rBudget")} (including the €18 service fee). We'll reply to <strong>${v("#rEmail")}</strong> within 48 hours.</p><p class="note">Your reference: <strong>${ref}</strong></p>`+(live?"":`<p class="note">Preview only: nothing was sent from here.</p>`)+`<button class="add" id="reqAgain" style="justify-self:start;padding:10px 22px">Request Another Shirt</button>`;
+  $("#reqOk").innerHTML=`<h2 style="font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:2.4rem;margin:0;line-height:1">Thanks, ${v("#rName").split(" ")[0]}</h2><p>We've got your request for a <strong>${v("#rClub")} ${v("#rSeason")}</strong> shirt, size ${v("#rSize")}, budget €${v("#rBudget")} (+ €18 service fee, only kept if you buy the shirt we find). We'll reply to <strong>${v("#rEmail")}</strong> within 48 hours.</p><p class="note">Your reference: <strong>${ref}</strong></p>`+(live?"":`<p class="note">Preview only: nothing was sent from here.</p>`)+`<button class="add" id="reqAgain" style="justify-self:start;padding:10px 22px">Request Another Shirt</button>`;
   $("#reqForm").hidden=true;$("#reqOk").hidden=false;window.scrollTo({top:0,behavior:RM?"auto":"smooth"});
   $("#reqAgain").onclick=()=>{$("#reqForm").reset();goReq()};
 });
