@@ -817,14 +817,15 @@ const SHIRTS=[
  {id:25,no:3,drop:1,real:true,club:"Barcelona",season:"2015/16",kind:"Away",league:"Spain",era:"2010s",size:"Kids XL (13–15 yrs)",kids:true,ptp:null,grade:"9/10",note:"Light wear to the size label",price:30,c1:"#f2b51c",c2:"#c8102e",pat:"plain",
   cut:"img/barca-front-cut.webp",cutBack:"img/barca-back-cut.webp",code:"659028-740",
   photos:[["img/barca-front.webp","Front"],["img/barca-back.webp","Back, Messi 10"],["img/barca-chest.jpg","Badge and Club World Champions patch"],["img/barca-lfp.jpg","LFP sleeve patch"],["img/barca-beko.jpg","Beko sleeve sponsor"],["img/barca-neck.jpg","Neck label"],["img/barca-code.jpg","Authentic tag"],["img/barca-tag.jpg","Inside tag"]]},
- {id:26,drop:2,real:true,club:"Paris Saint-Germain",season:"2025/26",kind:"Home",league:"France",era:"2020s",size:"M",ptp:null,grade:"9/10",note:"Like new, no hang tags",price:99,c1:"#16224f",c2:"#da291c",pat:"plain",
+ {id:26,drop:1,real:true,club:"Paris Saint-Germain",season:"2025/26",kind:"Home",league:"France",era:"2020s",size:"M",ptp:null,grade:"9/10",note:"Like new, no hang tags",price:99,c1:"#16224f",c2:"#da291c",pat:"plain",
   cut:"img/psg-front-cut.webp",code:"HJ4547-411",
   photos:[["img/psg-front.webp","Front"],["img/psg-chest.jpg","Crest, star and sponsor"],["img/psg-sleeve.jpg","Champions League and UEFA Foundation patches"],["img/psg-neck.jpg","Neck print"],["img/psg-engineered.jpg","Authentic Engineered tag"],["img/psg-washtag.jpg","Wash label"],["img/psg-tag.jpg","Inside tag"]]}
 ];
 const EXTRA={26:{isNew:true,version:"Player Version (Authentic)",patch:"Champions League Title Holder Badge, UEFA Foundation 10 Years Patch"},23:{isNew:true,print:"G. Ramos 88",patch:"Portuguese Champions Patch (Centre Chest)"},24:{isNew:true},25:{isNew:true,print:"Messi 10",patch:"FIFA Club World Champions 2015 Badge, LFP Sleeve Patches"}};
 SHIRTS.forEach(s=>Object.assign(s,{version:"Fan Version"},EXTRA[s.id]||{}));
 /* Numbering: every item keeps its number for life (also when sold). New items without a number get the next free one,
-   and go into the current drop unless a drop is given. To start a new drop, give the new items drop:2, drop:3 ... */
+   and go into the current drop unless a drop is given. Drops follow dates: Drop 001 = everything added until 31 Dec 2026,
+   Drop 002 = Jan–Mar 2027, then one drop per quarter (drop:3 = Apr–Jun 2027, ...). */
 (function(){let next=Math.max(0,...SHIRTS.map(x=>x.no||0));const cur=Math.max(1,...SHIRTS.map(x=>x.drop||0));
   SHIRTS.slice().sort((a,b)=>a.id-b.id).forEach(x=>{if(!x.no)x.no=++next;if(!x.drop)x.drop=cur})})();
 const CUR_DROP=Math.max(1,...SHIRTS.map(x=>x.drop||1));
